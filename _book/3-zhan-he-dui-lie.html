@@ -1,0 +1,383 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3、栈和队列 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-chuan.html" />
+    
+    
+    <link rel="prev" href="2-xian-xing-biao.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    408数据结构考察范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1-ji-chu-zhi-shi.html">
+            
+                <a href="1-ji-chu-zhi-shi.html">
+            
+                    
+                    1、基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2-xian-xing-biao.html">
+            
+                <a href="2-xian-xing-biao.html">
+            
+                    
+                    2、线性表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="3-zhan-he-dui-lie.html">
+            
+                <a href="3-zhan-he-dui-lie.html">
+            
+                    
+                    3、栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4-chuan.html">
+            
+                <a href="4-chuan.html">
+            
+                    
+                    4、串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5-shu.html">
+            
+                <a href="5-shu.html">
+            
+                    
+                    5、树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6-tu.html">
+            
+                <a href="6-tu.html">
+            
+                    
+                    6、图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7-cha-zhao.html">
+            
+                <a href="7-cha-zhao.html">
+            
+                    
+                    7、查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8-pai-xu.html">
+            
+                <a href="8-pai-xu.html">
+            
+                    
+                    8、排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >3、栈和队列</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3&#x3001;&#x6808;&#x548C;&#x961F;&#x5217;">3&#x3001;&#x6808;&#x548C;&#x961F;&#x5217;</h1>
+<h2 id="31-&#x6808;">3.1 &#x6808;</h2>
+<h3 id="1&#x3001;&#x6784;&#x9020;">1&#x3001;&#x6784;&#x9020;</h3>
+<p>&#x987A;&#x5E8F;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-C"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>
+{
+    ElemType data[MaxSize];
+    <span class="hljs-keyword">int</span> top;
+} Stack;
+</code></pre>
+<p>&#x94FE;&#x5F0F;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Linknode
+{
+    ElemType data;
+    <span class="hljs-keyword">struct</span> Linknode *next;
+} *LiStack;
+</code></pre>
+<h3 id="2&#x3001;&#x8BA1;&#x7B97;">2&#x3001;&#x8BA1;&#x7B97;</h3>
+<p>&#x5F53;&#x6709;n&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5143;&#x7D20;&#x5165;&#x6808;&#xFF0C;&#x51FA;&#x6808;&#x5E8F;&#x5217;&#x7684;&#x4E2A;&#x6570;&#x4E3A;&#xFF1A;</p>
+<p>$$
+\frac{1}{n+1} C_{2n}^{n}</p>
+<p>$$</p>
+<p>&#x7ED9;&#x5B9A;&#x4E8C;&#x53C9;&#x6811;&#x7684;<strong>&#x524D;&#x5E8F;&#x5E8F;&#x5217;</strong>&#x4F5C;&#x4E3A;&#x5165;&#x6808;&#x961F;&#x5217;&#xFF0C;&#x5219;&#x6240;&#x6709;&#x7684;&#x51FA;&#x6808;&#x4E3A;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;<strong>&#x4E2D;&#x5E8F;&#x904D;&#x5386;</strong></p>
+<h2 id="32-&#x961F;&#x5217;">3.2 &#x961F;&#x5217;</h2>
+<h3 id="1&#x3001;&#x6784;&#x9020;">1&#x3001;&#x6784;&#x9020;</h3>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>
+{
+    ElemType data[MaxSize];
+    <span class="hljs-keyword">int</span> front, rear; <span class="hljs-comment">//&#x961F;&#x5934;&#x548C;&#x961F;&#x5C3E;&#x6307;&#x9488;</span>
+} SqQueue;
+</code></pre>
+<p>&#x961F;&#x5934;&#x51FA;&#x3001;&#x961F;&#x5C3E;&#x5165;</p>
+<h3 id="2&#x3001;&#x4E2D;&#x7F00;&#x8F6C;&#x540E;&#x7F00;">2&#x3001;&#x4E2D;&#x7F00;&#x8F6C;&#x540E;&#x7F00;</h3>
+<ul>
+<li><strong>&#x64CD;&#x4F5C;&#x6570;</strong>&#xFF1A;&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x8868;&#x8FBE;&#x5F0F;</li>
+<li><strong>&#x754C;&#x9650;&#x7B26;</strong><ul>
+<li>&#x201C;(&#x201D;&#xFF1A;&#x76F4;&#x63A5;&#x5165;&#x6808;</li>
+<li>&#x201C;)&#x201D;&#xFF1A;&#x4F9D;&#x6B21;&#x5F39;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x76F4;&#x5230;&#x201C;(&#x201D;&#x4E3A;&#x6B62;</li>
+</ul>
+</li>
+<li><strong>&#x8FD0;&#x7B97;&#x7B26;</strong><ul>
+<li>&#x4F9D;&#x6B21;&#x5F39;&#x51FA;&#x6808;&#x4E2D;&#x4F18;&#x5148;&#x7EA7;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x5F53;&#x524D;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x6240;&#x6709;&#x8FD0;&#x7B97;&#x7B26;</li>
+<li>&#x78B0;&#x5230;&#x201C;(&#x201D;&#x6216;&#x6808;&#x7A7A;&#x505C;&#x6B62;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-xian-xing-biao.html" class="navigation navigation-prev " aria-label="Previous page: 2、线性表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-chuan.html" class="navigation navigation-next " aria-label="Next page: 4、串">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3、栈和队列","level":"1.4","depth":1,"next":{"title":"4、串","level":"1.5","depth":1,"path":"4-chuan.md","ref":"4-chuan.md","articles":[]},"previous":{"title":"2、线性表","level":"1.3","depth":1,"path":"2-xian-xing-biao.md","ref":"2-xian-xing-biao.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-zhan-he-dui-lie.md","mtime":"2022-12-14T15:20:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-26T11:50:37.489Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
